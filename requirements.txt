@@ -1,0 +1,5 @@
+-e git://github.com/django/django.git@46a3d7604e7fecde8df02ec363200ec5e0ce894e#egg=Django
+gunicorn==19.6.0
+mysqlclient==1.3.9
+PyMySQL==0.7.9
+requests==2.11.1

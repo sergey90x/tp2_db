@@ -380,7 +380,7 @@ def forum_exists(forum):
     cursor.execute("""SELECT 1
                     FROM Forums
                     WHERE short_name = %s""",
-                   (forum,))
+                   forum)
 
     return cursor.rowcount > 0
 
