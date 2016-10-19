@@ -1,0 +1,739 @@
+[2016-10-10 20:41:06 +0300] [39331] [DEBUG] Current configuration:
+  pre_exec: <function PreExec.pre_exec at 0x102d7d2f0>
+  loglevel: debug
+  preload_app: False
+  pidfile: None
+  ca_certs: None
+  worker_tmp_dir: None
+  forwarded_allow_ips: ['127.0.0.1']
+  proc_name: None
+  config: gunicorn.conf.py
+  on_reload: <function OnReload.on_reload at 0x102d74730>
+  chdir: /Users/SergeyCheremisin/venv/db/Forum
+  on_starting: <function OnStarting.on_starting at 0x102d74598>
+  post_fork: <function Postfork.post_fork at 0x102d74bf8>
+  pre_request: <function PreRequest.pre_request at 0x102d7d488>
+  worker_exit: <function WorkerExit.worker_exit at 0x102d7d730>
+  backlog: 2048
+  certfile: None
+  capture_output: False
+  syslog: False
+  statsd_prefix: 
+  on_exit: <function OnExit.on_exit at 0x102d7da60>
+  group: 20
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https'}
+  proxy_protocol: False
+  limit_request_fields: 100
+  workers: 4
+  worker_class: sync
+  max_requests_jitter: 0
+  graceful_timeout: 30
+  keepalive: 2
+  syslog_facility: user
+  proxy_allow_ips: ['127.0.0.1']
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x102d74d90>
+  post_request: <function PostRequest.post_request at 0x102d7d598>
+  syslog_prefix: None
+  enable_stdio_inheritance: False
+  tmp_upload_dir: None
+  accesslog: /Users/SergeyCheremisin/venv/logs/gunicorn-access.log
+  check_config: False
+  threads: 1
+  timeout: 30
+  logger_class: gunicorn.glogging.Logger
+  statsd_host: None
+  worker_int: <function WorkerInt.worker_int at 0x102d74f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x102d7d8c8>
+  raw_env: []
+  limit_request_line: 4094
+  pre_fork: <function Prefork.pre_fork at 0x102d74a60>
+  sendfile: None
+  daemon: False
+  user: 501
+  pythonpath: None
+  reload: False
+  spew: False
+  keyfile: None
+  cert_reqs: 0
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /Users/SergeyCheremisin/venv/logs/gunicorn-error.log
+  syslog_addr: unix:///var/run/syslog
+  default_proc_name: Forum.wsgi
+  umask: 0
+  limit_request_field_size: 8190
+  ssl_version: 3
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  worker_abort: <function WorkerAbort.worker_abort at 0x102d7d158>
+  suppress_ragged_eofs: True
+  worker_connections: 1000
+  django_settings: None
+  logconfig: None
+  when_ready: <function WhenReady.when_ready at 0x102d748c8>
+  bind: ['127.0.0.1:9000']
+  paste: None
+  max_requests: 0
+[2016-10-10 20:41:06 +0300] [39331] [INFO] Starting gunicorn 19.6.0
+[2016-10-10 20:41:06 +0300] [39331] [DEBUG] Arbiter booted
+[2016-10-10 20:41:06 +0300] [39331] [INFO] Listening at: http://127.0.0.1:9000 (39331)
+[2016-10-10 20:41:06 +0300] [39331] [INFO] Using worker: sync
+[2016-10-10 20:41:06 +0300] [39341] [INFO] Booting worker with pid: 39341
+[2016-10-10 20:41:06 +0300] [39344] [INFO] Booting worker with pid: 39344
+[2016-10-10 20:41:06 +0300] [39346] [INFO] Booting worker with pid: 39346
+[2016-10-10 20:41:07 +0300] [39348] [INFO] Booting worker with pid: 39348
+[2016-10-10 20:41:07 +0300] [39331] [DEBUG] 4 workers
+[2016-10-10 17:41:22 +0000] [39348] [DEBUG] GET /
+[2016-10-10 17:41:22 +0000] [39346] [DEBUG] GET /favicon.ico
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 17:45:24 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 17:45:24 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:24 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:24 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 17:45:25 +0000] [39348] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:25 +0300] [39331] [INFO] Handling signal: winch
+[2016-10-10 17:45:25 +0000] [39344] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:25 +0000] [39346] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 17:45:25 +0000] [39341] [DEBUG] worker: SIGWINCH ignored.
+[2016-10-10 20:45:25 +0300] [39331] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-10-10 20:53:43 +0300] [39331] [INFO] Handling signal: int
+[2016-10-10 17:53:43 +0000] [39348] [INFO] Worker exiting (pid: 39348)
+[2016-10-10 17:53:43 +0000] [39344] [INFO] Worker exiting (pid: 39344)
+[2016-10-10 17:53:43 +0000] [39341] [INFO] Worker exiting (pid: 39341)
+[2016-10-10 17:53:43 +0000] [39346] [INFO] Worker exiting (pid: 39346)
+[2016-10-10 20:53:43 +0300] [39331] [INFO] Shutting down: Master
+[2016-10-11 18:01:55 +0300] [55397] [DEBUG] Current configuration:
+  preload_app: False
+  sendfile: None
+  errorlog: /Users/SergeyCheremisin/venv/logs/gunicorn-error.log
+  capture_output: False
+  logconfig: None
+  ssl_version: 3
+  on_reload: <function OnReload.on_reload at 0x1057807b8>
+  pre_fork: <function Prefork.pre_fork at 0x105780ae8>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x105780e18>
+  worker_abort: <function WorkerAbort.worker_abort at 0x1057891e0>
+  pre_request: <function PreRequest.pre_request at 0x105789510>
+  post_request: <function PostRequest.post_request at 0x105789620>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x105789950>
+  on_exit: <function OnExit.on_exit at 0x105789ae8>
+  workers: 4
+  check_config: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  limit_request_line: 4094
+  spew: False
+  suppress_ragged_eofs: True
+  max_requests: 0
+  chdir: /Users/SergeyCheremisin/venv/db/Forum
+  pidfile: None
+  user: 501
+  paste: None
+  ca_certs: None
+  do_handshake_on_connect: False
+  enable_stdio_inheritance: False
+  max_requests_jitter: 0
+  pythonpath: None
+  certfile: None
+  cert_reqs: 0
+  timeout: 30
+  graceful_timeout: 30
+  backlog: 2048
+  syslog: False
+  on_starting: <function OnStarting.on_starting at 0x105780620>
+  worker_tmp_dir: None
+  pre_exec: <function PreExec.pre_exec at 0x105789378>
+  statsd_prefix: 
+  raw_env: []
+  reload: False
+  default_proc_name: Forum.wsgi
+  keepalive: 2
+  tmp_upload_dir: None
+  django_settings: None
+  proc_name: None
+  loglevel: debug
+  daemon: False
+  bind: ['127.0.0.1:9000']
+  limit_request_field_size: 8190
+  proxy_allow_ips: ['127.0.0.1']
+  post_fork: <function Postfork.post_fork at 0x105780c80>
+  proxy_protocol: False
+  keyfile: None
+  worker_int: <function WorkerInt.worker_int at 0x105789048>
+  config: gunicorn.conf.py
+  ciphers: TLSv1
+  group: 20
+  statsd_host: None
+  when_ready: <function WhenReady.when_ready at 0x105780950>
+  threads: 1
+  syslog_facility: user
+  umask: 0
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https'}
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_class: sync
+  worker_connections: 1000
+  worker_exit: <function WorkerExit.worker_exit at 0x1057897b8>
+  accesslog: /Users/SergeyCheremisin/venv/logs/gunicorn-access.log
+  limit_request_fields: 100
+[2016-10-11 18:01:55 +0300] [55397] [INFO] Starting gunicorn 19.6.0
+[2016-10-11 18:01:55 +0300] [55397] [DEBUG] Arbiter booted
+[2016-10-11 18:01:55 +0300] [55397] [INFO] Listening at: http://127.0.0.1:9000 (55397)
+[2016-10-11 18:01:55 +0300] [55397] [INFO] Using worker: sync
+[2016-10-11 18:01:55 +0300] [55407] [INFO] Booting worker with pid: 55407
+[2016-10-11 18:01:55 +0300] [55409] [INFO] Booting worker with pid: 55409
+[2016-10-11 18:01:55 +0300] [55411] [INFO] Booting worker with pid: 55411
+[2016-10-11 18:01:55 +0300] [55413] [INFO] Booting worker with pid: 55413
+[2016-10-11 18:01:55 +0300] [55397] [DEBUG] 4 workers
+[2016-10-11 15:02:09 +0000] [55407] [DEBUG] GET /
+[2016-10-11 15:02:09 +0000] [55413] [DEBUG] GET /favicon.ico
+[2016-10-11 15:02:27 +0000] [55407] [DEBUG] GET /polls
+[2016-10-11 15:10:10 +0000] [55413] [INFO] Worker exiting (pid: 55413)
+[2016-10-11 15:10:10 +0000] [55407] [INFO] Worker exiting (pid: 55407)
+[2016-10-11 15:10:10 +0000] [55411] [INFO] Worker exiting (pid: 55411)
+[2016-10-11 18:10:10 +0300] [55397] [INFO] Handling signal: term
+[2016-10-11 15:10:10 +0000] [55409] [INFO] Worker exiting (pid: 55409)
+[2016-10-11 18:10:11 +0300] [55397] [INFO] Shutting down: Master
+[2016-10-11 18:28:04 +0300] [17531] [DEBUG] Current configuration:
+  proxy_allow_ips: ['127.0.0.1']
+  syslog_addr: unix:///var/run/syslog
+  max_requests: 0
+  statsd_prefix: 
+  django_settings: None
+  when_ready: <function WhenReady.when_ready at 0x10446f950>
+  limit_request_field_size: 8190
+  worker_tmp_dir: None
+  default_proc_name: Forum.wsgi
+  worker_class: sync
+  timeout: 30
+  worker_exit: <function WorkerExit.worker_exit at 0x1044947b8>
+  bind: ['127.0.0.1:9000']
+  capture_output: False
+  syslog: False
+  enable_stdio_inheritance: False
+  cert_reqs: 0
+  ca_certs: None
+  statsd_host: None
+  worker_connections: 1000
+  worker_int: <function WorkerInt.worker_int at 0x104494048>
+  do_handshake_on_connect: False
+  worker_abort: <function WorkerAbort.worker_abort at 0x1044941e0>
+  backlog: 2048
+  group: 20
+  config: gunicorn.conf.py
+  chdir: /Users/SergeyCheremisin/venv/db/Forum
+  daemon: False
+  user: 501
+  paste: None
+  on_exit: <function OnExit.on_exit at 0x104494ae8>
+  tmp_upload_dir: None
+  errorlog: /Users/SergeyCheremisin/venv/logs/gunicorn-error.log
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x104494950>
+  pythonpath: None
+  limit_request_fields: 100
+  pre_request: <function PreRequest.pre_request at 0x104494510>
+  suppress_ragged_eofs: True
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  preload_app: False
+  umask: 0
+  logger_class: gunicorn.glogging.Logger
+  max_requests_jitter: 0
+  graceful_timeout: 30
+  syslog_prefix: None
+  limit_request_line: 4094
+  raw_env: []
+  check_config: False
+  sendfile: None
+  secure_scheme_headers: {'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-SSL': 'on'}
+  proxy_protocol: False
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x10446fe18>
+  keyfile: None
+  certfile: None
+  ciphers: TLSv1
+  accesslog: /Users/SergeyCheremisin/venv/logs/gunicorn-access.log
+  on_starting: <function OnStarting.on_starting at 0x10446f620>
+  on_reload: <function OnReload.on_reload at 0x10446f7b8>
+  pre_exec: <function PreExec.pre_exec at 0x104494378>
+  post_request: <function PostRequest.post_request at 0x104494620>
+  spew: False
+  proc_name: None
+  pidfile: None
+  forwarded_allow_ips: ['127.0.0.1']
+  post_fork: <function Postfork.post_fork at 0x10446fc80>
+  loglevel: debug
+  logconfig: None
+  syslog_facility: user
+  workers: 4
+  threads: 1
+  keepalive: 2
+  pre_fork: <function Prefork.pre_fork at 0x10446fae8>
+  reload: False
+  ssl_version: 3
+[2016-10-11 18:28:04 +0300] [17531] [INFO] Starting gunicorn 19.6.0
+[2016-10-11 18:28:04 +0300] [17531] [DEBUG] Arbiter booted
+[2016-10-11 18:28:04 +0300] [17531] [INFO] Listening at: http://127.0.0.1:9000 (17531)
+[2016-10-11 18:28:04 +0300] [17531] [INFO] Using worker: sync
+[2016-10-11 18:28:04 +0300] [17534] [INFO] Booting worker with pid: 17534
+[2016-10-11 18:28:04 +0300] [17537] [INFO] Booting worker with pid: 17537
+[2016-10-11 18:28:04 +0300] [17538] [INFO] Booting worker with pid: 17538
+[2016-10-11 18:28:04 +0300] [17543] [INFO] Booting worker with pid: 17543
+[2016-10-11 18:28:04 +0300] [17531] [DEBUG] 4 workers
+[2016-10-11 15:28:21 +0000] [17538] [DEBUG] GET /
+[2016-10-11 15:28:21 +0000] [17538] [DEBUG] GET /favicon.ico
+[2016-10-11 15:34:25 +0000] [17534] [DEBUG] POST /polls/db/api/user/create
+[2016-10-11 15:36:56 +0000] [17534] [DEBUG] POST /polls/db/api/user/create/d
+[2016-10-11 15:37:01 +0000] [17534] [DEBUG] POST /polls/db/api/user/create/
+[2016-10-11 18:43:34 +0300] [17531] [INFO] Handling signal: int
+[2016-10-11 15:43:34 +0000] [17534] [INFO] Worker exiting (pid: 17534)
+[2016-10-11 15:43:34 +0000] [17538] [INFO] Worker exiting (pid: 17538)
+[2016-10-11 15:43:34 +0000] [17543] [INFO] Worker exiting (pid: 17543)
+[2016-10-11 15:43:34 +0000] [17537] [INFO] Worker exiting (pid: 17537)
+[2016-10-11 18:43:34 +0300] [17531] [INFO] Shutting down: Master
+[2016-10-11 18:43:37 +0300] [37417] [DEBUG] Current configuration:
+  syslog: False
+  enable_stdio_inheritance: False
+  ca_certs: None
+  tmp_upload_dir: None
+  timeout: 30
+  preload_app: False
+  post_fork: <function Postfork.post_fork at 0x102180c80>
+  pidfile: None
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x102189950>
+  workers: 4
+  daemon: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  cert_reqs: 0
+  worker_connections: 1000
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  statsd_host: None
+  reload: False
+  config: gunicorn.conf.py
+  statsd_prefix: 
+  threads: 1
+  keepalive: 2
+  sendfile: None
+  proc_name: None
+  keyfile: None
+  loglevel: debug
+  limit_request_line: 4094
+  limit_request_fields: 100
+  syslog_prefix: None
+  raw_env: []
+  when_ready: <function WhenReady.when_ready at 0x102180950>
+  chdir: /Users/SergeyCheremisin/venv/db/Forum
+  group: 20
+  forwarded_allow_ips: ['127.0.0.1']
+  default_proc_name: Forum.wsgi
+  bind: ['127.0.0.1:9000']
+  spew: False
+  backlog: 2048
+  worker_int: <function WorkerInt.worker_int at 0x102189048>
+  max_requests_jitter: 0
+  worker_tmp_dir: None
+  user: 501
+  ssl_version: 3
+  pythonpath: None
+  logger_class: gunicorn.glogging.Logger
+  post_request: <function PostRequest.post_request at 0x102189620>
+  proxy_protocol: False
+  django_settings: None
+  on_starting: <function OnStarting.on_starting at 0x102180620>
+  on_reload: <function OnReload.on_reload at 0x1021807b8>
+  worker_abort: <function WorkerAbort.worker_abort at 0x1021891e0>
+  worker_class: sync
+  certfile: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  proxy_allow_ips: ['127.0.0.1']
+  worker_exit: <function WorkerExit.worker_exit at 0x1021897b8>
+  on_exit: <function OnExit.on_exit at 0x102189ae8>
+  logconfig: None
+  limit_request_field_size: 8190
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x102180e18>
+  graceful_timeout: 30
+  accesslog: /Users/SergeyCheremisin/venv/logs/gunicorn-access.log
+  umask: 0
+  paste: None
+  pre_exec: <function PreExec.pre_exec at 0x102189378>
+  errorlog: /Users/SergeyCheremisin/venv/logs/gunicorn-error.log
+  capture_output: False
+  max_requests: 0
+  check_config: False
+  syslog_facility: user
+  pre_fork: <function Prefork.pre_fork at 0x102180ae8>
+  pre_request: <function PreRequest.pre_request at 0x102189510>
+  syslog_addr: unix:///var/run/syslog
+[2016-10-11 18:43:37 +0300] [37417] [INFO] Starting gunicorn 19.6.0
+[2016-10-11 18:43:37 +0300] [37417] [DEBUG] Arbiter booted
+[2016-10-11 18:43:37 +0300] [37417] [INFO] Listening at: http://127.0.0.1:9000 (37417)
+[2016-10-11 18:43:37 +0300] [37417] [INFO] Using worker: sync
+[2016-10-11 18:43:37 +0300] [37420] [INFO] Booting worker with pid: 37420
+[2016-10-11 18:43:37 +0300] [37422] [INFO] Booting worker with pid: 37422
+[2016-10-11 18:43:37 +0300] [37424] [INFO] Booting worker with pid: 37424
+[2016-10-11 18:43:37 +0300] [37426] [INFO] Booting worker with pid: 37426
+[2016-10-11 18:43:37 +0300] [37417] [DEBUG] 4 workers
+[2016-10-11 15:43:48 +0000] [37426] [DEBUG] POST /polls/db/api/user/create/
+[2016-10-11 15:46:14 +0000] [37420] [DEBUG] POST /polls/db/api/user/create/a
+[2016-10-11 15:46:19 +0000] [37424] [DEBUG] POST /polls/db/api/user/create/
+[2016-10-11 15:51:12 +0000] [37424] [DEBUG] GET /polls/db/api/user/create/
+[2016-10-11 15:52:11 +0000] [37422] [DEBUG] GET /polls/db/api/user/creat/
+[2016-10-11 15:52:24 +0000] [37426] [DEBUG] POST /polls/db/api/user/create/
+[2016-10-11 15:54:19 +0000] [37422] [DEBUG] POST /polls/db/api/user/create/
+[2016-10-11 15:55:04 +0000] [37420] [DEBUG] POST /polls/db/api/user/create/
+[2016-10-11 15:55:13 +0000] [37424] [DEBUG] GET /polls/db/api/user/creat/
+[2016-10-11 15:55:44 +0000] [37426] [DEBUG] GET /polls/db/api/user/creat/
+[2016-10-11 15:56:12 +0000] [37426] [DEBUG] GET /polls/db/api/user/creat/
+[2016-10-11 15:56:29 +0000] [37420] [DEBUG] GET /
+[2016-10-11 15:56:41 +0000] [37424] [DEBUG] GET /polls/db/api/user/creat
+[2016-10-11 18:57:27 +0300] [37417] [INFO] Handling signal: int
+[2016-10-11 15:57:27 +0000] [37420] [INFO] Worker exiting (pid: 37420)
+[2016-10-11 15:57:27 +0000] [37424] [INFO] Worker exiting (pid: 37424)
+[2016-10-11 15:57:27 +0000] [37426] [INFO] Worker exiting (pid: 37426)
+[2016-10-11 15:57:27 +0000] [37422] [INFO] Worker exiting (pid: 37422)
+[2016-10-11 18:57:27 +0300] [37417] [INFO] Shutting down: Master
+[2016-10-11 18:57:29 +0300] [55190] [DEBUG] Current configuration:
+  chdir: /Users/SergeyCheremisin/venv/db/Forum
+  logger_class: gunicorn.glogging.Logger
+  when_ready: <function WhenReady.when_ready at 0x103580950>
+  threads: 1
+  on_reload: <function OnReload.on_reload at 0x1035807b8>
+  user: 501
+  pre_request: <function PreRequest.pre_request at 0x103589510>
+  worker_exit: <function WorkerExit.worker_exit at 0x1035897b8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x103589950>
+  backlog: 2048
+  enable_stdio_inheritance: False
+  django_settings: None
+  worker_tmp_dir: None
+  pythonpath: None
+  syslog_addr: unix:///var/run/syslog
+  on_starting: <function OnStarting.on_starting at 0x103580620>
+  syslog_prefix: None
+  worker_class: sync
+  max_requests: 0
+  max_requests_jitter: 0
+  check_config: False
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x103580e18>
+  preload_app: False
+  sendfile: None
+  daemon: False
+  raw_env: []
+  pidfile: None
+  umask: 0
+  tmp_upload_dir: None
+  limit_request_line: 4094
+  limit_request_field_size: 8190
+  graceful_timeout: 30
+  ssl_version: 3
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTO': 'https'}
+  forwarded_allow_ips: ['127.0.0.1']
+  post_fork: <function Postfork.post_fork at 0x103580c80>
+  worker_abort: <function WorkerAbort.worker_abort at 0x1035891e0>
+  statsd_prefix: 
+  worker_connections: 1000
+  keyfile: None
+  accesslog: /Users/SergeyCheremisin/venv/logs/gunicorn-access.log
+  syslog_facility: user
+  on_exit: <function OnExit.on_exit at 0x103589ae8>
+  proxy_protocol: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /Users/SergeyCheremisin/venv/logs/gunicorn-error.log
+  workers: 4
+  timeout: 30
+  keepalive: 2
+  spew: False
+  proc_name: None
+  cert_reqs: 0
+  suppress_ragged_eofs: True
+  bind: ['127.0.0.1:9000']
+  post_request: <function PostRequest.post_request at 0x103589620>
+  ca_certs: None
+  group: 20
+  capture_output: False
+  logconfig: None
+  pre_exec: <function PreExec.pre_exec at 0x103589378>
+  config: gunicorn.conf.py
+  loglevel: debug
+  statsd_host: None
+  default_proc_name: Forum.wsgi
+  do_handshake_on_connect: False
+  pre_fork: <function Prefork.pre_fork at 0x103580ae8>
+  limit_request_fields: 100
+  syslog: False
+  paste: None
+  certfile: None
+  ciphers: TLSv1
+  proxy_allow_ips: ['127.0.0.1']
+  reload: False
+  worker_int: <function WorkerInt.worker_int at 0x103589048>
+[2016-10-11 18:57:29 +0300] [55190] [INFO] Starting gunicorn 19.6.0
+[2016-10-11 18:57:29 +0300] [55190] [DEBUG] Arbiter booted
+[2016-10-11 18:57:29 +0300] [55190] [INFO] Listening at: http://127.0.0.1:9000 (55190)
+[2016-10-11 18:57:29 +0300] [55190] [INFO] Using worker: sync
+[2016-10-11 18:57:29 +0300] [55199] [INFO] Booting worker with pid: 55199
+[2016-10-11 18:57:29 +0300] [55237] [INFO] Booting worker with pid: 55237
+[2016-10-11 18:57:29 +0300] [55239] [INFO] Booting worker with pid: 55239
+[2016-10-11 18:57:29 +0300] [55241] [INFO] Booting worker with pid: 55241
+[2016-10-11 18:57:29 +0300] [55190] [DEBUG] 4 workers
+[2016-10-11 15:57:36 +0000] [55237] [DEBUG] GET /polls/db/api/user/creat/
+[2016-10-11 15:57:41 +0000] [55241] [DEBUG] GET /polls/db/api/user/create
+[2016-10-11 15:57:41 +0000] [55199] [DEBUG] GET /polls/db/api/user/create/
+[2016-10-11 15:57:44 +0000] [55239] [DEBUG] POST /polls/db/api/user/create
+[2016-10-11 15:57:49 +0000] [55199] [DEBUG] GET /polls/db/api/user/create
+[2016-10-11 15:57:49 +0000] [55199] [DEBUG] GET /polls/db/api/user/create/
+[2016-10-11 16:00:23 +0000] [55199] [DEBUG] GET /polls/db/api/user/creat
+[2016-10-11 16:00:23 +0000] [55199] [DEBUG] GET /polls/db/api/user/creat/
+[2016-10-11 19:00:27 +0300] [55190] [INFO] Handling signal: int
+[2016-10-11 16:00:27 +0000] [55199] [INFO] Worker exiting (pid: 55199)
+[2016-10-11 16:00:27 +0000] [55239] [INFO] Worker exiting (pid: 55239)
+[2016-10-11 16:00:27 +0000] [55241] [INFO] Worker exiting (pid: 55241)
+[2016-10-11 16:00:27 +0000] [55237] [INFO] Worker exiting (pid: 55237)
+[2016-10-11 19:00:27 +0300] [55190] [INFO] Shutting down: Master
+[2016-10-11 19:00:30 +0300] [58970] [DEBUG] Current configuration:
+  loglevel: debug
+  ciphers: TLSv1
+  worker_class: sync
+  worker_connections: 1000
+  pre_fork: <function Prefork.pre_fork at 0x102d66ae8>
+  post_fork: <function Postfork.post_fork at 0x102d66c80>
+  pre_exec: <function PreExec.pre_exec at 0x102d8b378>
+  worker_exit: <function WorkerExit.worker_exit at 0x102d8b7b8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x102d8b950>
+  on_exit: <function OnExit.on_exit at 0x102d8bae8>
+  capture_output: False
+  user: 501
+  logger_class: gunicorn.glogging.Logger
+  syslog_prefix: None
+  threads: 1
+  max_requests: 0
+  daemon: False
+  pidfile: None
+  proxy_allow_ips: ['127.0.0.1']
+  graceful_timeout: 30
+  limit_request_field_size: 8190
+  tmp_upload_dir: None
+  pythonpath: None
+  on_starting: <function OnStarting.on_starting at 0x102d66620>
+  when_ready: <function WhenReady.when_ready at 0x102d66950>
+  pre_request: <function PreRequest.pre_request at 0x102d8b510>
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  logconfig: None
+  enable_stdio_inheritance: False
+  post_request: <function PostRequest.post_request at 0x102d8b620>
+  accesslog: /Users/SergeyCheremisin/venv/logs/gunicorn-access.log
+  config: gunicorn.conf.py
+  proxy_protocol: False
+  limit_request_line: 4094
+  django_settings: None
+  sendfile: None
+  statsd_host: None
+  limit_request_fields: 100
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /Users/SergeyCheremisin/venv/logs/gunicorn-error.log
+  bind: ['127.0.0.1:9000']
+  ssl_version: 3
+  max_requests_jitter: 0
+  timeout: 30
+  check_config: False
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x102d66e18>
+  backlog: 2048
+  on_reload: <function OnReload.on_reload at 0x102d667b8>
+  preload_app: False
+  chdir: /Users/SergeyCheremisin/venv/db/Forum
+  raw_env: []
+  worker_tmp_dir: None
+  umask: 0
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-PROTOCOL': 'ssl'}
+  reload: False
+  keepalive: 2
+  keyfile: None
+  certfile: None
+  worker_int: <function WorkerInt.worker_int at 0x102d8b048>
+  worker_abort: <function WorkerAbort.worker_abort at 0x102d8b1e0>
+  statsd_prefix: 
+  group: 20
+  do_handshake_on_connect: False
+  proc_name: None
+  workers: 4
+  paste: None
+  spew: False
+  syslog_addr: unix:///var/run/syslog
+  syslog: False
+  default_proc_name: Forum.wsgi
+  syslog_facility: user
+  forwarded_allow_ips: ['127.0.0.1']
+[2016-10-11 19:00:30 +0300] [58970] [INFO] Starting gunicorn 19.6.0
+[2016-10-11 19:00:30 +0300] [58970] [DEBUG] Arbiter booted
+[2016-10-11 19:00:30 +0300] [58970] [INFO] Listening at: http://127.0.0.1:9000 (58970)
+[2016-10-11 19:00:30 +0300] [58970] [INFO] Using worker: sync
+[2016-10-11 19:00:30 +0300] [58991] [INFO] Booting worker with pid: 58991
+[2016-10-11 19:00:30 +0300] [58999] [INFO] Booting worker with pid: 58999
+[2016-10-11 19:00:30 +0300] [59010] [INFO] Booting worker with pid: 59010
+[2016-10-11 19:00:30 +0300] [59021] [INFO] Booting worker with pid: 59021
+[2016-10-11 19:00:30 +0300] [58970] [DEBUG] 4 workers
+[2016-10-11 16:00:34 +0000] [59021] [DEBUG] POST /polls/db/api/user/create
+[2016-10-11 16:00:51 +0000] [58999] [DEBUG] GET /polls/db/api/user/creat/
+[2016-10-11 16:00:53 +0000] [59010] [DEBUG] GET /polls/db/api/user/creat/
+[2016-10-11 16:04:04 +0000] [58991] [DEBUG] POST /polls/db/api/user/create
+[2016-10-11 16:05:50 +0000] [58999] [DEBUG] POST /polls/db/api/user/create
+[2016-10-11 19:08:46 +0300] [58970] [INFO] Handling signal: int
+[2016-10-11 16:08:46 +0000] [58991] [INFO] Worker exiting (pid: 58991)
+[2016-10-11 16:08:46 +0000] [58999] [INFO] Worker exiting (pid: 58999)
+[2016-10-11 16:08:46 +0000] [59010] [INFO] Worker exiting (pid: 59010)
+[2016-10-11 16:08:46 +0000] [59021] [INFO] Worker exiting (pid: 59021)
+[2016-10-11 19:08:46 +0300] [58970] [INFO] Shutting down: Master
+[2016-10-11 19:08:48 +0300] [69584] [DEBUG] Current configuration:
+  syslog_addr: unix:///var/run/syslog
+  cert_reqs: 0
+  daemon: False
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https'}
+  post_fork: <function Postfork.post_fork at 0x102a80c80>
+  worker_exit: <function WorkerExit.worker_exit at 0x102a897b8>
+  timeout: 30
+  on_exit: <function OnExit.on_exit at 0x102a89ae8>
+  umask: 0
+  errorlog: /Users/SergeyCheremisin/venv/logs/gunicorn-error.log
+  logconfig: None
+  syslog: False
+  syslog_prefix: None
+  default_proc_name: Forum.wsgi
+  bind: ['127.0.0.1:9000']
+  syslog_facility: user
+  statsd_prefix: 
+  certfile: None
+  pre_fork: <function Prefork.pre_fork at 0x102a80ae8>
+  worker_int: <function WorkerInt.worker_int at 0x102a89048>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x102a89950>
+  backlog: 2048
+  limit_request_line: 4094
+  ca_certs: None
+  sendfile: None
+  keepalive: 2
+  statsd_host: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  limit_request_field_size: 8190
+  when_ready: <function WhenReady.when_ready at 0x102a80950>
+  proc_name: None
+  reload: False
+  check_config: False
+  worker_class: sync
+  chdir: /Users/SergeyCheremisin/venv/db/Forum
+  max_requests_jitter: 0
+  preload_app: False
+  threads: 1
+  pre_request: <function PreRequest.pre_request at 0x102a89510>
+  django_settings: None
+  workers: 4
+  worker_connections: 1000
+  max_requests: 0
+  graceful_timeout: 30
+  loglevel: debug
+  capture_output: False
+  raw_env: []
+  worker_tmp_dir: None
+  on_starting: <function OnStarting.on_starting at 0x102a80620>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x102a80e18>
+  worker_abort: <function WorkerAbort.worker_abort at 0x102a891e0>
+  pre_exec: <function PreExec.pre_exec at 0x102a89378>
+  spew: False
+  pidfile: None
+  user: 501
+  group: 20
+  tmp_upload_dir: None
+  forwarded_allow_ips: ['127.0.0.1']
+  keyfile: None
+  ssl_version: 3
+  ciphers: TLSv1
+  pythonpath: None
+  paste: None
+  limit_request_fields: 100
+  accesslog: /Users/SergeyCheremisin/venv/logs/gunicorn-access.log
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  on_reload: <function OnReload.on_reload at 0x102a807b8>
+  config: gunicorn.conf.py
+  post_request: <function PostRequest.post_request at 0x102a89620>
+  logger_class: gunicorn.glogging.Logger
+  enable_stdio_inheritance: False
+[2016-10-11 19:08:48 +0300] [69584] [INFO] Starting gunicorn 19.6.0
+[2016-10-11 19:08:48 +0300] [69584] [DEBUG] Arbiter booted
+[2016-10-11 19:08:48 +0300] [69584] [INFO] Listening at: http://127.0.0.1:9000 (69584)
+[2016-10-11 19:08:48 +0300] [69584] [INFO] Using worker: sync
+[2016-10-11 19:08:48 +0300] [69587] [INFO] Booting worker with pid: 69587
+[2016-10-11 19:08:48 +0300] [69589] [INFO] Booting worker with pid: 69589
+[2016-10-11 19:08:48 +0300] [69591] [INFO] Booting worker with pid: 69591
+[2016-10-11 19:08:48 +0300] [69593] [INFO] Booting worker with pid: 69593
+[2016-10-11 19:08:48 +0300] [69584] [DEBUG] 4 workers
+[2016-10-11 16:09:00 +0000] [69589] [DEBUG] POST /polls/db/api/user/create
+[2016-10-11 19:09:53 +0300] [69584] [INFO] Handling signal: int
+[2016-10-11 16:09:53 +0000] [69593] [INFO] Worker exiting (pid: 69593)
+[2016-10-11 16:09:53 +0000] [69587] [INFO] Worker exiting (pid: 69587)
+[2016-10-11 16:09:53 +0000] [69591] [INFO] Worker exiting (pid: 69591)
+[2016-10-11 16:09:53 +0000] [69589] [INFO] Worker exiting (pid: 69589)
+[2016-10-11 19:09:53 +0300] [69584] [INFO] Shutting down: Master
