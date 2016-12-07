@@ -380,7 +380,7 @@ def forum_exists(forum):
     cursor.execute("""SELECT 1
                     FROM Forums
                     WHERE short_name = %s""",
-                   forum)
+                   (forum,))
 
     return cursor.rowcount > 0
 
@@ -390,7 +390,7 @@ def forum_posts(forum, limit=0, order='desc', since_date=None, related=[]):
 
 
 def thread_create(fields):
-
+    print("step3")
     cursor = connection.cursor()
     cursor.execute("""
         INSERT INTO
@@ -406,7 +406,7 @@ def thread_create(fields):
                 fields.get('forum'),
                 fields.get('user')
                 ))
-
+    print()
     return cursor.lastrowid
 
 

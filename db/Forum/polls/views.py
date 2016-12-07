@@ -244,7 +244,7 @@ def forum_list_threads_f(request):                           #Error     to use n
     if not forum_exists(forum):
         return result_not_found("Forum %s doesn't exist" % forum)
 
-    limit = request.GET.get('limit', 1)
+    limit = request.GET.get('limit', 2)
     since_date = request.GET.get('since')
     order = request.GET.get('order', 'desc')
     related = request.GET.getlist('related')
@@ -293,7 +293,7 @@ def thread_close_f(request):
 
 @csrf_exempt
 def thread_create_f(request):
-
+    print("step1")
     json_str = request.body.decode('utf-8')
     tdata = json.loads(json_str)
 
@@ -306,10 +306,10 @@ def thread_create_f(request):
 
     if not forum_exists(forum):
         return result_not_found("Forum %s doesn't exist" % forum)
-
+    print("step2")
     thread_id = thread_create(tdata)
     tdata = thread_data(thread_id, counters=False)
-
+    print("last")
     if tdata:
         return result(tdata)
     else:
