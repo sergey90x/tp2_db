@@ -99,7 +99,6 @@ def user_followers_list_f(request):
 
     res = user_list_followers(email, limit=limit, order=order, since_id=since_id, full=True)
 
-    print("\n\n\n\n" + str(res) + "\n\n\n\n")
     return result(res)
 
 
@@ -293,7 +292,6 @@ def thread_close_f(request):
 
 @csrf_exempt
 def thread_create_f(request):
-    print("step1")
     json_str = request.body.decode('utf-8')
     tdata = json.loads(json_str)
 
@@ -306,10 +304,8 @@ def thread_create_f(request):
 
     if not forum_exists(forum):
         return result_not_found("Forum %s doesn't exist" % forum)
-    print("step2")
     thread_id = thread_create(tdata)
     tdata = thread_data(thread_id, counters=False)
-    print("last")
     if tdata:
         return result(tdata)
     else:
@@ -361,27 +357,21 @@ def thread_list_f(request):
 
 
 def thread_list_posts_f(request):
-    print("step 0")
     thread = request.GET.get('thread')
 
     if not thread_exists(thread):
         return result_not_found("Thread %s doesn't exist" % thread)
 
-    print("step 1")
-
     limit = request.GET.get('limit', 0)
     since_date = request.GET.get('since')
     order = request.GET.get('order', 'desc')
     sort = request.GET.get('sort', 'flat')
-    print("step 2")
     if not check_arg(sort, ['flat', 'tree', 'parent_tree']):
         return result_invalid_semantic("Wrong value for sort")
-    print("step 3")
     if not check_arg(order, ['desc', 'asc']):
         return result_invalid_semantic("Wrong value for order")
-    print("step 4")
     postres = thread_posts(thread, limit=limit, order=order, since_date=since_date, sort=sort)
-    print("step 7")
+
     return result(postres)
     #return HttpResponse("fuke")
 
@@ -564,13 +554,11 @@ def post_details_f(request):                           #Error    'NoneType' obje
     post = request.GET.get('post')
     related = request.GET.getlist('related')
 
-    print(related, "\n\n\nPrint related     \n\n\n ")
 
     if not check_enum(related, ['user', 'forum', 'thread']):               #if not  user  ***
         return result_invalid_semantic("Wrong value for related")
 
     pdata = post_data(post, related=related)
-    print(pdata, "post_details       ")
     if pdata:
         return result(pdata)
     else:

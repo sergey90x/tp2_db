@@ -119,13 +119,10 @@ def user_list_followers(email, limit=0, order='desc', since_id=None, full=False)
 
     res = []
 
-    print("\n\n\n" + str(res) + "\n\n\n")
     if len(emails):
         users = users_data(emails)
-        print("\n\n\n" + str(users) + "\n\n\n")
         for email in emails:
             res.append(users.get(email))
-            print("\n\n\n" + str(res) + "\n\n\n")
 
     return res
 
@@ -175,17 +172,11 @@ def users_data(emails, follow_data=True, subscriptions=True):
     res = {}
     udata = cursor.fetchone()
 
-    print("\n\n1\n" + str(udata) + "\n udata = cursor.fetchone \n\n\n")
-
     while udata is not None:
         ures = model_dict(udata, cursor.description)
-        print("\n\n1.5\n" + str(ures) + "\n res[ures['email']] = ures \n\n\n")
         res[ures['email']] = ures
-        print("\n\n2\n" + str(res) + "\n res[ures['email']] = ures \n\n\n")
         udata = cursor.fetchone()
-        print("\n\n3\n" + str(udata) + "\n udata = cursor.fetchone() \n\n\n")
 
-    print("\n\n4\n" + str(len(res)) + "\n len(res) \n\n\n")
     if not len(res):
         return res
 
@@ -198,19 +189,16 @@ def users_data(emails, follow_data=True, subscriptions=True):
                         GROUP BY follower""" % sql_in(emails))
 
         follow_row = cursor.fetchone()
-        print("\n\n5\n" + str(follow_row) + "\n follow_row = cursor.fetchone() \n\n\n")
+
         while follow_row is not None:
             follower = follow_row[0]
             followees = follow_row[1]
-            print("\n\n5.5\n" + str(follower) + "  " + str(followees) + "\n follower and followees \n\n\n")
             str1 = followees
             num = str1.find(',')
             followees = str1[0:num]
             following[follower] = [followees]
             # following[follower] = filter(None, followees.split(','))
-            print("\n\n6\n" + str(following) + "\n following[follower] = filter(None, followees.split(',')) \n\n\n")
             follow_row = cursor.fetchone()
-            print("\n\n7\n" + str(follow_row) + "\n follow_row = cursor.fetchone() \n\n\n")
 
         followers = {}
         cursor.execute("""SELECT followee, GROUP_CONCAT(follower, ',')
@@ -220,7 +208,6 @@ def users_data(emails, follow_data=True, subscriptions=True):
 
 
         follow_row = cursor.fetchone()
-        print("\n\n8\n" + str(follow_row) + "\n follow_row = cursor.fetchone() \n\n\n")
         while follow_row is not None:
             followee = follow_row[0]
             ufollowers = follow_row[1]
@@ -229,7 +216,6 @@ def users_data(emails, follow_data=True, subscriptions=True):
             ufollowers = str1[0:num]
             followers[followee] = [ufollowers]
             # followers[followee] = filter(None, ufollowers.split(','))
-            print("\n\n9\n" + str(followers) + "\n followers[follower] = filter(None, followers.split(',')) \n\n\n")
             follow_row = cursor.fetchone()
 
     if subscriptions:
@@ -240,11 +226,9 @@ def users_data(emails, follow_data=True, subscriptions=True):
                         GROUP BY user""" % sql_in(emails))
 
         thread_row = cursor.fetchone()
-        print("\n\n10\n" + str(thread_row) + "\n  thread_row = cursor.fetchone() \n\n\n")
         while thread_row is not None:
             user = thread_row[0]
             uthreads = thread_row[1]
-            print("\n\n10.5\n" + str(user) + "  " + str(uthreads) + str(len(uthreads)) + "\n user and uthreads \n\n\n")
             num = len(uthreads)
             nthreads = []
             if uthreads[num-1] == ',':
@@ -258,10 +242,8 @@ def users_data(emails, follow_data=True, subscriptions=True):
                     #nthreads.append(el)
                 else:
                     nthreads.append(int(el))
-            print("\n\n11\n" + str(nthreads) + "\n\n\n\n")
             # threads[user] = map(int, filter(None, uthreads.split(',')))
             threads[user] = nthreads
-            print("\n\n11\n" + str(threads) + "\n   threads[user] = map(int, filter(None, uthreads.split(','))) \n\n\n")
             thread_row = cursor.fetchone()
 
     if follow_data or subscriptions:
@@ -269,10 +251,8 @@ def users_data(emails, follow_data=True, subscriptions=True):
             if follow_data:
                 res[key]['followers'] = followers.get(key, [])
                 res[key]['following'] = following.get(key, [])
-                print("\n\n12\n" + str(thread_row) + "\n  thread_row = cursor.fetchone() \n\n\n")
             if subscriptions:
                 res[key]['subscriptions'] = threads.get(key, [])
-                print("\n\n13\n" + str(res) + "\n  res[key]['subscriptions'] = threads.get(key, [])\n\n\n")
     return res
 
 
@@ -390,7 +370,6 @@ def forum_posts(forum, limit=0, order='desc', since_date=None, related=[]):
 
 
 def thread_create(fields):
-    print("step3")
     cursor = connection.cursor()
     cursor.execute("""
         INSERT INTO
@@ -406,7 +385,6 @@ def thread_create(fields):
                 fields.get('forum'),
                 fields.get('user')
                 ))
-    print()
     return cursor.lastrowid
 
 
@@ -438,13 +416,10 @@ def forum_users(forum, limit=0, order='desc', since_id=None, full=False):
     if limit:
         q += " LIMIT " + str(limit)
 
-    print("\n\n\n\n" + q + "\n q before\n\n\n")
 
     cursor.execute(q, tuple(qargs))
 
     emails = [f[0] for f in cursor.fetchall()]
-    print("\npuff\n\n\n" + str(cursor.fetchall()) + "\n q before\n\n\n")
-    print("\npuff\n\n\n" + str(emails) + "\n q before\n\n\n")
 
     if not full:
         return emails
@@ -459,7 +434,6 @@ def forum_users(forum, limit=0, order='desc', since_id=None, full=False):
 
 
 def thread_posts(thread, limit=0, order='desc', since_date=None, related=[], sort='flat'):
-    print("step 5")
     return posts_list({ 'thread' : thread }, limit, order, since_date, related, sort)
 
 def thread_open(thread):
@@ -602,7 +576,6 @@ def threads_data(threads):
 
 
 def threads_list(search_fields, limit=0, order='desc', since_date=None, related=[]):
-    print("\n1\n\n\n" + str(related) + "\n\nbefor q\n\n")
     cursor = connection.cursor()
     q = """SELECT *, (likes - dislikes) AS points
             FROM Threads
@@ -626,9 +599,6 @@ def threads_list(search_fields, limit=0, order='desc', since_date=None, related=
     if limit:
         q += " LIMIT " + str(limit)
 
-
-    print("\n1\n\n\n" + q + "\n\nbefor q\n\n")
-    print("\n2\n\n\n" + str(qargs) + "\n\nbefor qargs\n\n")
     cursor.execute(q, tuple(qargs))
 
     res = []
@@ -645,19 +615,15 @@ def threads_list(search_fields, limit=0, order='desc', since_date=None, related=
         if 'user' in related:
             users.append(rowres['user'])
         res.append(rowres)
-        print("\n3\n\n\n" + str(res) + "\n\nres.append(rowres)\n\n")
         row = cursor.fetchone()
-        print("\n4\n\n\n" + str(row) + "\n\n row = cursor.fetchone()\n\n")
 
     if 'forum' in related and forums:
         forums = forums_data(forums)
-        print("\n5\n\n\n" + str(forums) + "\n\n forums = forums_data(forums)\n\n")
         for keyn, val in enumerate(res):
             res[keyn]['forum'] = forums.get(val['forum'])
 
     if 'user' in related and users:
         users = users_data(users)
-        print("\n6\n\n\n" + str(users) + "\n\n users  users_data\n\n")
         for keyn, val in enumerate(res):
             res[keyn]['user'] = users.get(val['user'])
 
@@ -871,10 +837,8 @@ def post_update(post, fields):
 
 
 def posts_list(search_fields, limit=0, order='desc', since_date=None, related=[], sort='flat'):
-    print("step 6")
     cursor = connection.cursor()
 
-    print("\n1\n\n" + str(related) + "\n before cursor.execute(q, tuple(qargs))\n\n ")
     if sort == 'tree':
         return posts_list_tree(search_fields, limit, order, since_date, related)
     if sort == 'parent_tree':
@@ -902,13 +866,10 @@ def posts_list(search_fields, limit=0, order='desc', since_date=None, related=[]
     if limit:
         q += " LIMIT " + str(limit)
 
-    print("\n1\n\n" + q + "\n before cursor.execute(q, tuple(qargs))\n\n ")
-    print("\n1\n\n" + str(qargs) + "\n before cursor.execute(q, tuple(qargs))\n\n ")
     cursor.execute(q, tuple(qargs))
 
     res = []
     row = cursor.fetchone()
-    print("\n2\n\n" + str(row) + "\n     row = cursor.fetchone()\n\n ")
 
     forums = []
     threads = []
@@ -918,44 +879,31 @@ def posts_list(search_fields, limit=0, order='desc', since_date=None, related=[]
 
     while row is not None:
         rowres = model_dict(row, cursor.description)
-        print("\n3\n\n" + str(rowres) + "\n     row = cursor.fetchone()\n\n ")
 
         if 'forum' in related:
             forums.append(rowres['forum'])
-            print("\n4\n\n" + str(forums) + "\n     forums.append(rowres['forum'])\n\n ")
         if 'thread' in related:
             threads.append(rowres['thread'])
-            print("\n5\n\n" + str(threads) + "\n     threads.append(rowres['thread'])\n\n ")
         if 'user' in related:
             users.append(rowres['user'])
-            print("\n6\n\n" + str(users) + "\n     users.append(rowres['user'])\n\n ")
         res.append(rowres)
         row = cursor.fetchone()
         #row = None   # Dangerous!!!
 
     if 'forum' in related and forums:
-        print('forums')
         forums = forums_data(forums)
-        print("\n7\n\n" + str(forums) + "\n     forums = forums_data(forums)\n\n ")
         for keyn, val in enumerate(res):
             res[keyn]['forum'] = forums.get(val['forum'])
-            print("\n8\n\n" + str(res) + "\n      res[keyn]['forum'] = forums.get(val['forum'])\n\n ")
 
     if 'thread' in related and threads:
-        print('threads')
         threads = threads_data(threads)
-        print("\n9\n\n" + str(threads) + "\n      threads = threads_data(threads)\n\n ")
         for keyn, val in enumerate(res):
             res[keyn]['thread'] = threads.get(val['thread'])
-            print("\n10\n\n" + str(res) + "\n     res[keyn]['thread'] = threads.get(val['thread'])\n\n ")
 
     if 'user' in related and users:
-        print("users")
         users = users_data(users)
-        print("\n11\n\n" + str(users) + "\n     forums = forums_data(forums)\n\n ")
         for keyn, val in enumerate(res):
             res[keyn]['user'] = users.get(val['user'])
-            print("\n12\n\n" + str(res) + "\n     res[keyn]['user'] = users.get(val['user'])\n\n ")
 
     return res
 
@@ -992,23 +940,17 @@ def posts_list_parent_tree(search_fields, limit=0, order='desc', since_date=None
     if limit:
         q += " LIMIT " + str(limit)
 
-    print("\np1\n\n" + str(q) + "\n     q\n\n ")
     cursor.execute(q, tuple(qargs))
 
     res = []
     ids = []
     row = cursor.fetchone()
-    print("\np2\n\n" + str(row) + "\n         row = cursor.fetchone()\n\n ")
 
     while row is not None:
         rowres = model_dict(row, cursor.description)
-        print("\np3\n\n" + str(rowres) + "\n          rowres = model_dict(row, cursor.description)\n\n ")
         ids.append(rowres['sorter'])
-        print("\np4\n\n" + str(ids) + "\n     q\n\n ")
         res.append(rowres)
-        print("\np5\n\n" + str(res) + "\n     q\n\n ")
         row = cursor.fetchone()
-        print("\np6\n\n" + str(row) + "\n     q\n\n ")
 
     if not ids:
         return res
@@ -1021,11 +963,9 @@ def posts_list_parent_tree(search_fields, limit=0, order='desc', since_date=None
     childs = {}
 
     row = cursor.fetchone()
-    print("\np7\n\n" + str(row) + "\n     q\n\n ")
 
     while row is not None:
         rowres = model_dict(row, cursor.description)
-        print("\np8\n\n" + str(rowres) + "\n     q\n\n ")
         row = cursor.fetchone()
         if rowres['parent'] in childs:
         # if childs.has_key(rowres['parent']):
@@ -1070,7 +1010,6 @@ def posts_list_parent_tree(search_fields, limit=0, order='desc', since_date=None
     if limit_total and limit:
         return res[:int(limit)]
 
-    print("\npend\n\n" + str(res) + "\n     end of \n\n ")
 
     return res
 

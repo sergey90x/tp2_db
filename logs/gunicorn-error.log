@@ -1228,3 +1228,22 @@ error: [Errno 41] Protocol wrong type for socket
 [2016-12-07 12:39:08 +0300] [31620] [INFO] Booting worker with pid: 31620
 [2016-12-07 12:39:10 +0300] [30524] [CRITICAL] WORKER TIMEOUT (pid:31613)
 [2016-12-07 12:39:11 +0300] [31622] [INFO] Booting worker with pid: 31622
+[2016-12-07 13:18:21 +0300] [30524] [INFO] Handling signal: int
+[2016-12-07 10:18:22 +0000] [31616] [INFO] Worker exiting (pid: 31616)
+[2016-12-07 10:18:22 +0000] [31622] [INFO] Worker exiting (pid: 31622)
+[2016-12-07 10:18:22 +0000] [31620] [INFO] Worker exiting (pid: 31620)
+[2016-12-07 10:18:22 +0000] [31618] [INFO] Worker exiting (pid: 31618)
+[2016-12-07 13:18:22 +0300] [30524] [INFO] Shutting down: Master
+[2016-12-07 13:18:27 +0300] [34001] [INFO] Starting gunicorn 19.6.0
+[2016-12-07 13:18:27 +0300] [34001] [INFO] Listening at: http://127.0.0.1:8000 (34001)
+[2016-12-07 13:18:27 +0300] [34001] [INFO] Using worker: sync
+[2016-12-07 13:18:27 +0300] [34004] [INFO] Booting worker with pid: 34004
+[2016-12-07 13:18:27 +0300] [34006] [INFO] Booting worker with pid: 34006
+[2016-12-07 13:18:27 +0300] [34008] [INFO] Booting worker with pid: 34008
+[2016-12-07 13:18:27 +0300] [34010] [INFO] Booting worker with pid: 34010
+[2016-12-07 13:18:42 +0300] [34001] [INFO] Handling signal: int
+[2016-12-07 10:18:43 +0000] [34010] [INFO] Worker exiting (pid: 34010)
+[2016-12-07 10:18:43 +0000] [34006] [INFO] Worker exiting (pid: 34006)
+[2016-12-07 10:18:43 +0000] [34008] [INFO] Worker exiting (pid: 34008)
+[2016-12-07 10:18:43 +0000] [34004] [INFO] Worker exiting (pid: 34004)
+[2016-12-07 13:18:43 +0300] [34001] [INFO] Shutting down: Master
